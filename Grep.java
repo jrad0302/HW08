@@ -107,7 +107,9 @@ public class Grep {
                     // if the current line contains the substring, return the line and number
                     if (current.contains(s)) {
                         String num = Integer.toString(i);
-                        finalString += f.getCanonicalPath() + ":" + num + ":" + current + '\n';
+                        String[] paths = f.getCanonicalPath().split("CS 1331");
+                        String path = paths[1];
+                        finalString += path.substring(1) + ":" + num + ":" + current + '\n';
                     }
                 }
             } else {
