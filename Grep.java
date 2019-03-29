@@ -32,7 +32,7 @@ public class Grep {
                     args[1] = temp;
                 }
                 File f = new File(args[1]);
-                System.out.print(grep(args[0], f, false));
+                System.out.print(grep(f, args[0], true));
             } catch (InvalidSearchStringException iss) {
                 System.out.println("Search string cannot have a newline character");
             } catch (IOException io) {
@@ -54,7 +54,7 @@ public class Grep {
                     }
 
                     File f = new File(args[2]);
-                    System.out.print(grep(args[1], f, true));
+                    System.out.print(grep(f, args[1], false));
                 } catch (InvalidSearchStringException iss) {
                     System.out.println("Search string cannot have a newline character");
                 } catch (IOException io) {
@@ -86,7 +86,7 @@ public class Grep {
             if (f.isDirectory()) {
                 File[] files = f.listFiles();
                 for (File file : files) {
-                    grep(s, file, cs);
+                    grep(file, s, cs);
                 }
                 // checking if its a file or a directory checks that it exists as well
             } else if (f.isFile()) {
