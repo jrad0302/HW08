@@ -76,7 +76,7 @@ public class Grep {
     * @param cs a Boolean denoting case sensitivity
     * @return a String of all the hits for the search
     */
-    public static String grep(File f, String s, Boolean cs) throws InvalidSearchStringException, IOException {
+    public static String grep(File f, String s, boolean cs) throws InvalidSearchStringException, IOException {
         String returned = new String("");
         // catch the newline character
         if (s.indexOf('\n') >= 0) {
